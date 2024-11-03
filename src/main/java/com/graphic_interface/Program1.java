@@ -152,6 +152,11 @@ public class Program1 extends javax.swing.JFrame {
         ExitButton.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         ExitButton.setForeground(new java.awt.Color(255, 255, 255));
         ExitButton.setText("Salir");
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelContainerP1Layout = new javax.swing.GroupLayout(PanelContainerP1);
         PanelContainerP1.setLayout(PanelContainerP1Layout);
@@ -275,6 +280,13 @@ public class Program1 extends javax.swing.JFrame {
         sumNegVecElements.setSelected(false);
         sortNegVecDesc.setSelected(false);
     }//GEN-LAST:event_Reset_ValuesBttnActionPerformed
+
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
+        mainMenu.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_ExitButtonActionPerformed
 
     /**
      * @param args the command line arguments

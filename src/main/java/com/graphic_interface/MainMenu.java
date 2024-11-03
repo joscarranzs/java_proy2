@@ -71,7 +71,12 @@ public class MainMenu extends javax.swing.JFrame {
         OptionsMainMenu.setBackground(new java.awt.Color(255, 255, 255));
         OptionsMainMenu.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         OptionsMainMenu.setForeground(new java.awt.Color(0, 0, 0));
-        OptionsMainMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presentación", "Programa 1", "Programa 2", "Programa 3", "Salir" }));
+        OptionsMainMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presentacion", "Programa 1", "Programa 2", "Programa 3", "Salir" }));
+        OptionsMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OptionsMainMenuActionPerformed(evt);
+            }
+        });
         PanelContainer.add(OptionsMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 170, 40));
 
         AcceptButton.setBackground(new java.awt.Color(129, 155, 207));
@@ -105,6 +110,11 @@ public class MainMenu extends javax.swing.JFrame {
 
             // Verifica si la opción seleccionada es "Presentation"
             if(select.equals("Presentacion")){
+            // Abre la ventana de presentación y cierra la actual
+                Presentation presentationPage = new Presentation();
+                presentationPage.setVisible(true);
+                presentationPage.setLocationRelativeTo(null);
+                this.dispose(); 
 
             // Verifica si la opción seleccionada es "Program 1"
             } else if(select.equals("Programa 1")){
@@ -130,6 +140,10 @@ public class MainMenu extends javax.swing.JFrame {
             }
 
     }//GEN-LAST:event_AcceptButtonActionPerformed
+
+    private void OptionsMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OptionsMainMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OptionsMainMenuActionPerformed
 
     /**
      * @param args the command line arguments
