@@ -26,73 +26,82 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        PanelContainer = new javax.swing.JPanel();
+        MainMenuTITLE = new javax.swing.JPanel();
         MainMenuLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        SelectOpLabel = new javax.swing.JLabel();
         OptionsMainMenu = new javax.swing.JComboBox<>();
         AcceptButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(153, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelContainer.setBackground(new java.awt.Color(153, 255, 255));
+        PanelContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        MainMenuTITLE.setBackground(new java.awt.Color(0, 204, 204));
 
         MainMenuLabel.setFont(new java.awt.Font("Tw Cen MT", 0, 24)); // NOI18N
         MainMenuLabel.setForeground(new java.awt.Color(255, 255, 255));
-        MainMenuLabel.setText("--MAIN MENU--");
+        MainMenuLabel.setText("--MENU PRINCIPAL--");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(MainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+        javax.swing.GroupLayout MainMenuTITLELayout = new javax.swing.GroupLayout(MainMenuTITLE);
+        MainMenuTITLE.setLayout(MainMenuTITLELayout);
+        MainMenuTITLELayout.setHorizontalGroup(
+            MainMenuTITLELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainMenuTITLELayout.createSequentialGroup()
+                .addGap(172, 172, 172)
+                .addComponent(MainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(213, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+        MainMenuTITLELayout.setVerticalGroup(
+            MainMenuTITLELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainMenuTITLELayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(MainMenuLabel)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 70));
+        PanelContainer.add(MainMenuTITLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 70));
 
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Select an option:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
+        SelectOpLabel.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        SelectOpLabel.setForeground(new java.awt.Color(0, 0, 0));
+        SelectOpLabel.setText("Seleccione una opción");
+        PanelContainer.add(SelectOpLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
 
         OptionsMainMenu.setBackground(new java.awt.Color(255, 255, 255));
         OptionsMainMenu.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         OptionsMainMenu.setForeground(new java.awt.Color(0, 0, 0));
-        OptionsMainMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presentation", "Program 1", "Program 2", "Program 3", "Exit" }));
-        jPanel3.add(OptionsMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 170, 40));
+        OptionsMainMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presentación", "Programa 1", "Programa 2", "Programa 3", "Salir" }));
+        PanelContainer.add(OptionsMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 170, 40));
 
         AcceptButton.setBackground(new java.awt.Color(129, 155, 207));
         AcceptButton.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         AcceptButton.setForeground(new java.awt.Color(255, 255, 255));
-        AcceptButton.setText("Accept");
-        jPanel3.add(AcceptButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, 30));
+        AcceptButton.setText("Aceptar");
+        AcceptButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcceptButtonActionPerformed(evt);
+            }
+        });
+        PanelContainer.add(AcceptButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 570, Short.MAX_VALUE)
+            .addComponent(PanelContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 570, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+            .addComponent(PanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
+        
+    }//GEN-LAST:event_AcceptButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,9 +111,9 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AcceptButton;
     private javax.swing.JLabel MainMenuLabel;
+    private javax.swing.JPanel MainMenuTITLE;
     private javax.swing.JComboBox<String> OptionsMainMenu;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel PanelContainer;
+    private javax.swing.JLabel SelectOpLabel;
     // End of variables declaration//GEN-END:variables
 }
