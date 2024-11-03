@@ -26,57 +26,275 @@ public class Program1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelContainerP1 = new javax.swing.JPanel();
+        Program1TITLE = new javax.swing.JPanel();
+        Program1Label = new javax.swing.JLabel();
+        NumberOfValuesLabel = new javax.swing.JLabel();
+        NumberOfValues = new javax.swing.JTextField();
+        sumPosVecWithNegVec = new javax.swing.JCheckBox();
+        confirmValues = new javax.swing.JButton();
+        sumPosVecElements = new javax.swing.JCheckBox();
+        sortPosVecAsc = new javax.swing.JCheckBox();
+        sumNegVecElements = new javax.swing.JCheckBox();
+        sortNegVecDesc = new javax.swing.JCheckBox();
+        confirmOption = new javax.swing.JButton();
+        Reset_ValuesBttn = new javax.swing.JButton();
+        ExitButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PanelContainerP1.setBackground(new java.awt.Color(110, 134, 151));
+
+        Program1TITLE.setBackground(new java.awt.Color(93, 107, 117));
+
+        Program1Label.setFont(new java.awt.Font("Tw Cen MT", 0, 36)); // NOI18N
+        Program1Label.setForeground(new java.awt.Color(255, 255, 255));
+        Program1Label.setText("- - - - - - - - Programa 1- - - - - - - - -");
+
+        javax.swing.GroupLayout Program1TITLELayout = new javax.swing.GroupLayout(Program1TITLE);
+        Program1TITLE.setLayout(Program1TITLELayout);
+        Program1TITLELayout.setHorizontalGroup(
+            Program1TITLELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Program1TITLELayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Program1Label)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        Program1TITLELayout.setVerticalGroup(
+            Program1TITLELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Program1TITLELayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Program1Label)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        NumberOfValuesLabel.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        NumberOfValuesLabel.setForeground(new java.awt.Color(255, 255, 255));
+        NumberOfValuesLabel.setText("Ingrese la cantidad de valores:");
+
+        NumberOfValues.setBackground(new java.awt.Color(176, 186, 193));
+        NumberOfValues.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        NumberOfValues.setForeground(new java.awt.Color(255, 255, 255));
+
+        sumPosVecWithNegVec.setBackground(new java.awt.Color(109, 134, 150));
+        sumPosVecWithNegVec.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        sumPosVecWithNegVec.setForeground(new java.awt.Color(255, 255, 255));
+        sumPosVecWithNegVec.setText(" Suma Vector Positivo con Vector Negativo");
+        sumPosVecWithNegVec.setContentAreaFilled(false);
+        sumPosVecWithNegVec.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        sumPosVecWithNegVec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sumPosVecWithNegVecActionPerformed(evt);
+            }
+        });
+
+        confirmValues.setBackground(new java.awt.Color(72, 100, 126));
+        confirmValues.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        confirmValues.setForeground(new java.awt.Color(255, 255, 255));
+        confirmValues.setText("Confirmar");
+
+        sumPosVecElements.setBackground(new java.awt.Color(109, 134, 150));
+        sumPosVecElements.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        sumPosVecElements.setForeground(new java.awt.Color(255, 255, 255));
+        sumPosVecElements.setText(" Suma Elementos del Vector Positivos.");
+        sumPosVecElements.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sumPosVecElementsActionPerformed(evt);
+            }
+        });
+
+        sortPosVecAsc.setBackground(new java.awt.Color(109, 134, 150));
+        sortPosVecAsc.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        sortPosVecAsc.setForeground(new java.awt.Color(255, 255, 255));
+        sortPosVecAsc.setText("Ordenar vector positivo (ascendentemente)");
+        sortPosVecAsc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortPosVecAscActionPerformed(evt);
+            }
+        });
+
+        sumNegVecElements.setBackground(new java.awt.Color(109, 134, 150));
+        sumNegVecElements.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        sumNegVecElements.setForeground(new java.awt.Color(255, 255, 255));
+        sumNegVecElements.setText(" Suma Elementos del Vector Negativos.");
+        sumNegVecElements.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sumNegVecElementsActionPerformed(evt);
+            }
+        });
+
+        sortNegVecDesc.setBackground(new java.awt.Color(109, 134, 150));
+        sortNegVecDesc.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        sortNegVecDesc.setForeground(new java.awt.Color(255, 255, 255));
+        sortNegVecDesc.setText("Ordenar vector negativo (descendentemente) ");
+        sortNegVecDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortNegVecDescActionPerformed(evt);
+            }
+        });
+
+        confirmOption.setBackground(new java.awt.Color(72, 100, 126));
+        confirmOption.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        confirmOption.setForeground(new java.awt.Color(255, 255, 255));
+        confirmOption.setText("Confirmar");
+
+        Reset_ValuesBttn.setBackground(new java.awt.Color(72, 100, 126));
+        Reset_ValuesBttn.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        Reset_ValuesBttn.setForeground(new java.awt.Color(255, 255, 255));
+        Reset_ValuesBttn.setText("Reiniciar valores");
+        Reset_ValuesBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Reset_ValuesBttnActionPerformed(evt);
+            }
+        });
+
+        ExitButton.setBackground(new java.awt.Color(72, 100, 126));
+        ExitButton.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
+        ExitButton.setForeground(new java.awt.Color(255, 255, 255));
+        ExitButton.setText("Salir");
+
+        javax.swing.GroupLayout PanelContainerP1Layout = new javax.swing.GroupLayout(PanelContainerP1);
+        PanelContainerP1.setLayout(PanelContainerP1Layout);
+        PanelContainerP1Layout.setHorizontalGroup(
+            PanelContainerP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Program1TITLE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelContainerP1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelContainerP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelContainerP1Layout.createSequentialGroup()
+                        .addComponent(NumberOfValuesLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NumberOfValues, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sumPosVecWithNegVec)
+                    .addComponent(sumPosVecElements)
+                    .addComponent(sortPosVecAsc)
+                    .addComponent(sumNegVecElements)
+                    .addComponent(sortNegVecDesc)
+                    .addComponent(confirmValues, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelContainerP1Layout.createSequentialGroup()
+                        .addComponent(confirmOption, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Reset_ValuesBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelContainerP1Layout.setVerticalGroup(
+            PanelContainerP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelContainerP1Layout.createSequentialGroup()
+                .addComponent(Program1TITLE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(PanelContainerP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NumberOfValuesLabel)
+                    .addComponent(NumberOfValues, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(confirmValues, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(sumPosVecWithNegVec)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sumPosVecElements)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sumNegVecElements)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sortPosVecAsc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sortNegVecDesc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContainerP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmOption, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Reset_ValuesBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelContainerP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PanelContainerP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void sumPosVecWithNegVecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumPosVecWithNegVecActionPerformed
+        // TODO add your handling code here:
+        sumPosVecElements.setSelected(false);
+        sortPosVecAsc.setSelected(false);
+        sumNegVecElements.setSelected(false);
+        sortNegVecDesc.setSelected(false);
+    }//GEN-LAST:event_sumPosVecWithNegVecActionPerformed
+
+    private void sumPosVecElementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumPosVecElementsActionPerformed
+        // TODO add your handling code here:
+        sumPosVecWithNegVec.setSelected(false);
+        sortPosVecAsc.setSelected(false);
+        sumNegVecElements.setSelected(false);
+        sortNegVecDesc.setSelected(false);
+    }//GEN-LAST:event_sumPosVecElementsActionPerformed
+
+    private void sortPosVecAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortPosVecAscActionPerformed
+        // TODO add your handling code here:
+        sumPosVecWithNegVec.setSelected(false);
+        sumPosVecElements.setSelected(false);
+        sumNegVecElements.setSelected(false);
+        sortNegVecDesc.setSelected(false);
+    }//GEN-LAST:event_sortPosVecAscActionPerformed
+
+    private void sumNegVecElementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumNegVecElementsActionPerformed
+        // TODO add your handling code here:
+
+        sumPosVecWithNegVec.setSelected(false);
+        sumPosVecElements.setSelected(false);
+        sortPosVecAsc.setSelected(false);
+        sortNegVecDesc.setSelected(false);
+    }//GEN-LAST:event_sumNegVecElementsActionPerformed
+
+    private void sortNegVecDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortNegVecDescActionPerformed
+        // TODO add your handling code here:
+        sumPosVecWithNegVec.setSelected(false);
+        sumPosVecElements.setSelected(false);
+        sortPosVecAsc.setSelected(false);
+        sumNegVecElements.setSelected(false);
+    }//GEN-LAST:event_sortNegVecDescActionPerformed
+
+    private void Reset_ValuesBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_ValuesBttnActionPerformed
+        // TODO add your handling code here:
+
+        sumPosVecWithNegVec.setSelected(false);
+        sumPosVecElements.setSelected(false);
+        sortPosVecAsc.setSelected(false);
+        sumNegVecElements.setSelected(false);
+        sortNegVecDesc.setSelected(false);
+    }//GEN-LAST:event_Reset_ValuesBttnActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Program1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Program1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Program1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Program1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Program1().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JTextField NumberOfValues;
+    private javax.swing.JLabel NumberOfValuesLabel;
+    private javax.swing.JPanel PanelContainerP1;
+    private javax.swing.JLabel Program1Label;
+    private javax.swing.JPanel Program1TITLE;
+    private javax.swing.JButton Reset_ValuesBttn;
+    private javax.swing.JButton confirmOption;
+    private javax.swing.JButton confirmValues;
+    private javax.swing.JCheckBox sortNegVecDesc;
+    private javax.swing.JCheckBox sortPosVecAsc;
+    private javax.swing.JCheckBox sumNegVecElements;
+    private javax.swing.JCheckBox sumPosVecElements;
+    private javax.swing.JCheckBox sumPosVecWithNegVec;
     // End of variables declaration//GEN-END:variables
 }

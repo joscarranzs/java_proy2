@@ -100,7 +100,35 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AcceptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptButtonActionPerformed
-        
+            // Obtiene la opción seleccionada en el menú principal
+            String select = OptionsMainMenu.getSelectedItem().toString();
+
+            // Verifica si la opción seleccionada es "Presentation"
+            if(select.equals("Presentacion")){
+
+            // Verifica si la opción seleccionada es "Program 1"
+            } else if(select.equals("Programa 1")){
+                // Abre la ventana del Programa 1
+                Program1 program1 = new Program1();
+                program1.setVisible(true);
+                program1.setLocationRelativeTo(null);
+                this.dispose();
+
+            // Verifica si la opción seleccionada es "Program 2"
+            } else if(select.equals("Programa 2")){
+                // Abre la ventana del Programa 2
+
+            // Verifica si la opción seleccionada es "Program 3"
+            } else if(select.equals("Programa 3")){
+               // Abre la ventana del Programa 3
+
+
+            // Verifica si la opción seleccionada es "Exit"
+            } else if(select.equals("Salir")){
+                // Cierra la aplicación
+                System.exit(0);
+            }
+
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
     /**
