@@ -15,6 +15,7 @@ public class Presentation extends javax.swing.JFrame {
      */
   public Presentation() {
     initComponents();
+    getRootPane().setDefaultButton(Exit_Button);
   }
 
   /**
