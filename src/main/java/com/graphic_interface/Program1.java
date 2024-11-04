@@ -4,6 +4,9 @@
  */
 package com.graphic_interface;
 
+import com.example.validates.ValidatesProgram1;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alberto
@@ -75,6 +78,11 @@ public class Program1 extends javax.swing.JFrame {
         NumberOfValues.setBackground(new java.awt.Color(176, 186, 193));
         NumberOfValues.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         NumberOfValues.setForeground(new java.awt.Color(255, 255, 255));
+        NumberOfValues.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumberOfValuesActionPerformed(evt);
+            }
+        });
 
         sumPosVecWithNegVec.setBackground(new java.awt.Color(109, 134, 150));
         sumPosVecWithNegVec.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
@@ -92,6 +100,11 @@ public class Program1 extends javax.swing.JFrame {
         confirmValues.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         confirmValues.setForeground(new java.awt.Color(255, 255, 255));
         confirmValues.setText("Confirmar");
+        confirmValues.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmValuesActionPerformed(evt);
+            }
+        });
 
         sumPosVecElements.setBackground(new java.awt.Color(109, 134, 150));
         sumPosVecElements.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
@@ -232,53 +245,30 @@ public class Program1 extends javax.swing.JFrame {
 
     private void sumPosVecWithNegVecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumPosVecWithNegVecActionPerformed
         // TODO add your handling code here:
-        sumPosVecElements.setSelected(false);
-        sortPosVecAsc.setSelected(false);
-        sumNegVecElements.setSelected(false);
-        sortNegVecDesc.setSelected(false);
+       
     }//GEN-LAST:event_sumPosVecWithNegVecActionPerformed
 
     private void sumPosVecElementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumPosVecElementsActionPerformed
         // TODO add your handling code here:
-        sumPosVecWithNegVec.setSelected(false);
-        sortPosVecAsc.setSelected(false);
-        sumNegVecElements.setSelected(false);
-        sortNegVecDesc.setSelected(false);
+ 
     }//GEN-LAST:event_sumPosVecElementsActionPerformed
 
     private void sortPosVecAscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortPosVecAscActionPerformed
-        // TODO add your handling code here:
-        sumPosVecWithNegVec.setSelected(false);
-        sumPosVecElements.setSelected(false);
-        sumNegVecElements.setSelected(false);
-        sortNegVecDesc.setSelected(false);
+  
     }//GEN-LAST:event_sortPosVecAscActionPerformed
 
     private void sumNegVecElementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumNegVecElementsActionPerformed
-        // TODO add your handling code here:
-
-        sumPosVecWithNegVec.setSelected(false);
-        sumPosVecElements.setSelected(false);
-        sortPosVecAsc.setSelected(false);
-        sortNegVecDesc.setSelected(false);
+  
     }//GEN-LAST:event_sumNegVecElementsActionPerformed
 
     private void sortNegVecDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortNegVecDescActionPerformed
-        // TODO add your handling code here:
-        sumPosVecWithNegVec.setSelected(false);
-        sumPosVecElements.setSelected(false);
-        sortPosVecAsc.setSelected(false);
-        sumNegVecElements.setSelected(false);
+      
     }//GEN-LAST:event_sortNegVecDescActionPerformed
 
     private void Reset_ValuesBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_ValuesBttnActionPerformed
         // TODO add your handling code here:
 
-        sumPosVecWithNegVec.setSelected(false);
-        sumPosVecElements.setSelected(false);
-        sortPosVecAsc.setSelected(false);
-        sumNegVecElements.setSelected(false);
-        sortNegVecDesc.setSelected(false);
+        
     }//GEN-LAST:event_Reset_ValuesBttnActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
@@ -287,6 +277,39 @@ public class Program1 extends javax.swing.JFrame {
         mainMenu.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void confirmValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmValuesActionPerformed
+        String strNumbValues = NumberOfValues.getText(); //Se obtiene el valor del TextField
+        
+        if(ValidatesProgram1.validateEmptyValues(strNumbValues)){ //Se valida que el valor no este vacío
+            NumberOfValues.setText("");
+            NumberOfValues.requestFocus();
+            return;
+        }
+        
+        //Try-Catch para validar que solo sean valores enteros
+        int numbValues=0;
+        try{
+            numbValues = Integer.parseInt(strNumbValues);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, 
+                    "Los valores deben ser números enteros ", "Error", 0);
+            NumberOfValues.setText("");
+            NumberOfValues.requestFocus();
+            return;
+        }
+        
+         //Validar que el valor no sea negativo o cero
+         if(ValidatesProgram1.validatePositive(numbValues)){
+             NumberOfValues.setText("");
+             NumberOfValues.requestFocus();
+             return;
+         }
+    }//GEN-LAST:event_confirmValuesActionPerformed
+
+    private void NumberOfValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberOfValuesActionPerformed
+        confirmValuesActionPerformed(evt);
+    }//GEN-LAST:event_NumberOfValuesActionPerformed
 
     /**
      * @param args the command line arguments
