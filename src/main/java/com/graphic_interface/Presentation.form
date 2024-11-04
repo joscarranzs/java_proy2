@@ -50,7 +50,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="Exit_Button" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
-                      <Component id="Project2Ttitle" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
+                      <Component id="ProjectTtitle" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
               </Group>
@@ -60,9 +60,9 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Memebers" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
-                      <Component id="Member6Anthony" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="Member5Daniel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="Member4Alexa" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemberAnthony" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemberDaniel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemberAlexa" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="FISCLabel" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -71,9 +71,9 @@
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="UTP_Logo" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="Member1Jose" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                      <Component id="Member2Alberto" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="Member3Josue" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                      <Component id="MemberJose" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                      <Component id="MemberAlberto" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="MemberJosue" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -107,21 +107,21 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="Project2Ttitle" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="ProjectTtitle" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Component id="Memebers" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Member1Jose" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="MemberJose" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Member2Alberto" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="MemberAlberto" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Member3Josue" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="MemberJosue" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Member4Alexa" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="MemberAlexa" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Member5Daniel" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="MemberDaniel" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Member6Anthony" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="MemberAnthony" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Exit_Button" pref="38" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -173,7 +173,7 @@
             <Property name="text" type="java.lang.String" value="FACULTAD DE INGENIER&#xcd;A DE SISTEMAS COMPUTACIONALES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Project2Ttitle">
+        <Component class="javax.swing.JLabel" name="ProjectTtitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
@@ -195,7 +195,7 @@
             <Property name="text" type="java.lang.String" value="UNIVERSIDAD TECNOL&#xd3;GICA DE PANAM&#xc1; "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Member1Jose">
+        <Component class="javax.swing.JLabel" name="MemberJose">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
@@ -217,7 +217,7 @@
             <Property name="text" type="java.lang.String" value="INTEGRANTES:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Member2Alberto">
+        <Component class="javax.swing.JLabel" name="MemberAlberto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
@@ -228,7 +228,7 @@
             <Property name="text" type="java.lang.String" value="Alberto Carranza 2-769-563"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Member3Josue">
+        <Component class="javax.swing.JLabel" name="MemberJosue">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
@@ -239,7 +239,7 @@
             <Property name="text" type="java.lang.String" value="Josue Flores 9-767-790"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Member4Alexa">
+        <Component class="javax.swing.JLabel" name="MemberAlexa">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
@@ -250,7 +250,7 @@
             <Property name="text" type="java.lang.String" value="Alexandra De Gracia 8-1026-180"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Member5Daniel">
+        <Component class="javax.swing.JLabel" name="MemberDaniel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
@@ -261,7 +261,7 @@
             <Property name="text" type="java.lang.String" value="Daniel Ubarte 8-1025-1817"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Member6Anthony">
+        <Component class="javax.swing.JLabel" name="MemberAnthony">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tw Cen MT" size="18" style="0"/>
