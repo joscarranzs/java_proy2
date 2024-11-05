@@ -4,6 +4,7 @@
  */
 package com.graphic_interface;
 
+import com.example.calculations.CalculationsProgram1;
 import com.example.validates.ValidatesProgram1;
 import javax.swing.JOptionPane;
 
@@ -12,6 +13,8 @@ import javax.swing.JOptionPane;
  * @author Alberto
  */
 public class Program1 extends javax.swing.JFrame {
+    private boolean isVectorFilled = false;
+    private CalculationsProgram1 calculationsProgram = new CalculationsProgram1();
 
     /**
      * Creates new form Program1
@@ -150,6 +153,11 @@ public class Program1 extends javax.swing.JFrame {
         confirmOption.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         confirmOption.setForeground(new java.awt.Color(255, 255, 255));
         confirmOption.setText("Confirmar");
+        confirmOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmOptionActionPerformed(evt);
+            }
+        });
 
         Reset_ValuesBttn.setBackground(new java.awt.Color(72, 100, 126));
         Reset_ValuesBttn.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
@@ -267,11 +275,20 @@ public class Program1 extends javax.swing.JFrame {
 
     private void Reset_ValuesBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset_ValuesBttnActionPerformed
         // TODO add your handling code here:
-
+           sumPosVecWithNegVec.setSelected(false);
+           sumPosVecElements.setSelected(false);
+           sortPosVecAsc.setSelected(false);
+           sumNegVecElements.setSelected(false);
+           sortNegVecDesc.setSelected(false);
+           NumberOfValues.setText("");
+           NumberOfValues.requestFocus();
+           calculationsProgram.resetVector();
+           isVectorFilled = false;
         
     }//GEN-LAST:event_Reset_ValuesBttnActionPerformed
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        //Al presionar el boton Salir, muestra el menu principal
         MainMenu mainMenu = new MainMenu();
         mainMenu.setVisible(true);
         mainMenu.setLocationRelativeTo(null);
@@ -279,9 +296,20 @@ public class Program1 extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void confirmValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmValuesActionPerformed
+        // Verifica si el vector ya ha sido llenado
+        if (isVectorFilled) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Los valores del vector ya han sido ingresados.",
+                "Advertencia",
+                JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+        
         String strNumbValues = NumberOfValues.getText(); //Se obtiene el valor del TextField
         
-        if(ValidatesProgram1.validateEmptyValues(strNumbValues)){ //Se valida que el valor no este vacío
+        if(ValidatesProgram1.validateEmptyValues(strNumbValues)){ //Se valida que los valores no esten vacío
             NumberOfValues.setText("");
             NumberOfValues.requestFocus();
             return;
@@ -299,17 +327,51 @@ public class Program1 extends javax.swing.JFrame {
             return;
         }
         
-         //Validar que el valor no sea negativo o cero
+         //Validar que el dato no sea negativo o cero
          if(ValidatesProgram1.validatePositive(numbValues)){
              NumberOfValues.setText("");
              NumberOfValues.requestFocus();
              return;
          }
+         
+         
+         //Se llama al método para llenar los valores del vector
+          calculationsProgram.fillVector(numbValues);
+         isVectorFilled = true; //  Indica que el vector ha sido llenado
+         //Mensaje de confirmación del vector cargado
+         JOptionPane.showMessageDialog(
+            null,
+            "Todos los valores han sido ingresados exitosamente.",
+            "Confirmación",
+            JOptionPane.INFORMATION_MESSAGE
+    );
+         
     }//GEN-LAST:event_confirmValuesActionPerformed
 
     private void NumberOfValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberOfValuesActionPerformed
         confirmValuesActionPerformed(evt);
     }//GEN-LAST:event_NumberOfValuesActionPerformed
+
+
+
+    private void confirmOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmOptionActionPerformed
+         float[] vector = calculationsProgram.getMainVector(); //Se obtiene el vector con los datos
+         if(ValidatesProgram1.validateVector(vector)){ // Validar que primero se debe ingresar valores en el vector
+             return;
+         }
+         
+         //Validar que al menos alguna opcion este seleccionada para realizar las operaciones
+         if(ValidatesProgram1.validateOptionSelection(sumPosVecElements, 
+                 sumNegVecElements, sumPosVecWithNegVec, sortPosVecAsc, sortNegVecDesc)){
+             
+             return;
+         }
+         
+         //Se llama el metodo que contiene los calculos de las operaciones seleccionadas
+        calculationsProgram.operationsOptions(sumPosVecElements, 
+                sumNegVecElements, sumPosVecWithNegVec, sortPosVecAsc, sortNegVecDesc);
+         
+    }//GEN-LAST:event_confirmOptionActionPerformed
 
     /**
      * @param args the command line arguments
