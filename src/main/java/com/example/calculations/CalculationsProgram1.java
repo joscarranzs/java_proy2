@@ -70,61 +70,91 @@ public class CalculationsProgram1 {
         negativeSum += value; // Suma de elementos negativos
       }
     }
+        
+
     // Suma de vectores positivo y negativo (si tienen el mismo tamaño)
     if (sumPosVecWithNegVec.isSelected()) {
       if (posVector.size() == negVector.size()) {
-        float totalSum = 0;
+            float totalSum = 0;
         for (int i = 0; i < posVector.size(); i++) {
-          totalSum += posVector.get(i) + negVector.get(i);
+            totalSum += posVector.get(i) + negVector.get(i);
         }
-        result.append("Suma de VecPos y VecNeg: ").append(df.format(totalSum)).append("\n");
+            result.append("Suma de VecPos y VecNeg: ").append(df.format(totalSum)).append("\n");
       } else {
-        result.append("Suma de VecPos y VecNeg: Imposible, no tienen igual tamaño.\n");
+            result.append("Suma de VecPos y VecNeg: Imposible, no tienen igual tamaño.\n");
       }
     }
 
     // Suma de elementos positivos
-    if (sumPosVecElements.isSelected()) {
-      result.append("Suma de Elementos Positivos: ").append(df.format(positiveSum)).append("\n");
-    }
-
-    // Suma de elementos negativos
+    
+        if (sumPosVecElements.isSelected()) {
+            if (!posVector.isEmpty()){// Verificar si se ingresaron valores positivos
+                result.append("Suma de Elementos Positivos: ").append(df.format(positiveSum)).append("\n");
+            }else{
+                result.append("No se han ingresado valores positivos.\n");
+            }
+            
+        }
+        
+    
+    
+   // Verificar si se ingresaron valores negativos
+        // Suma de elementos negativos
     if (sumNegVecElements.isSelected()) {
-      result.append("Suma de Elementos Negativos: ").append(df.format(negativeSum)).append("\n");
+        if (!negVector.isEmpty()){
+            result.append("Suma de Elementos Negativos: ").append(df.format(negativeSum)).append("\n");
+        }else{
+            result.append("No se han ingresado valores negativos.\n");
+        }
+        
     }
+   
+        
+   
+    
 
 
 
     // Ordenar vector positivo en orden ascendente
     if (sortPosVecAsc.isSelected()) {
-      Collections.sort(posVector);
-
-      // Convertir a enteros y mostrar
-      StringBuilder posVectorAsInt = new StringBuilder("VecPos Ordenado Ascendentemente: [");
-      for (int i = 0; i < posVector.size(); i++) {
-        posVectorAsInt.append((int) Math.floor(posVector.get(i))); // Convierte cada elemento a int
-        if (i < posVector.size() - 1) {
-          posVectorAsInt.append(", ");
+        
+        if (!posVector.isEmpty()){
+            Collections.sort(posVector);
+            // Convertir a enteros y mostrar
+            StringBuilder posVectorAsInt = new StringBuilder("VecPos Ordenado Ascendentemente: [");
+            for (int i = 0; i < posVector.size(); i++) {
+                  posVectorAsInt.append((int) Math.floor(posVector.get(i))); // Convierte cada elemento a int
+              if (i < posVector.size() - 1) {
+                  posVectorAsInt.append(", ");
+              }
+            }
+        posVectorAsInt.append("]\n");
+        result.append(posVectorAsInt);
+        }else{
+            result.append("No hay valores positivos para ordenar en forma ascendente.\n");
         }
-      }
-      posVectorAsInt.append("]\n");
-      result.append(posVectorAsInt);
+      
     }
 
     // Ordenar vector negativo en orden descendente
     if (sortNegVecDesc.isSelected()) {
-      Collections.sort(negVector, Collections.reverseOrder());
-
-      // Convertir a enteros y mostrar
-      StringBuilder negVectorAsInt = new StringBuilder("VecNeg Ordenado Descendentemente: [");
-      for (int i = 0; i < negVector.size(); i++) {
-        negVectorAsInt.append((int) Math.floor(negVector.get(i))); // Convierte cada elemento a int
-        if (i < negVector.size() - 1) {
-          negVectorAsInt.append(", ");
+        
+        if (!negVector.isEmpty()){
+            Collections.sort(negVector, Collections.reverseOrder());
+             // Convertir a enteros y mostrar
+            StringBuilder negVectorAsInt = new StringBuilder("VecNeg Ordenado Descendentemente: [");
+            for (int i = 0; i < negVector.size(); i++) {
+                negVectorAsInt.append((int) Math.floor(negVector.get(i))); // Convierte cada elemento a int
+                if (i < negVector.size() - 1) {
+                    negVectorAsInt.append(", ");
+                }
+            }
+            negVectorAsInt.append("]\n");
+            result.append(negVectorAsInt);
+        }else{
+            result.append("No hay valores negativos para ordenar en forma descendente.\n");
         }
-      }
-      negVectorAsInt.append("]\n");
-      result.append(negVectorAsInt);
+     
     }
     // Mostrar todos los resultados 
     JOptionPane.showMessageDialog(
