@@ -15,6 +15,7 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        getRootPane().setDefaultButton(AcceptButton);
     }
 
     /**
@@ -142,7 +143,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_AcceptButtonActionPerformed
 
     private void OptionsMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OptionsMainMenuActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_OptionsMainMenuActionPerformed
 
     /**
