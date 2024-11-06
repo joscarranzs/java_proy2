@@ -4,12 +4,18 @@
  */
 package com.graphic_interface;
 
+import com.example.calculations.CalculationsProgram2;
+import com.example.validates.ValidatesProgram2;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alberto
  */
 public class Program2 extends javax.swing.JFrame {
-
+    CalculationsProgram2 calculationsprogram2 = new CalculationsProgram2();
+    // Variable booleana para verificar si la matriz ya fue llenada
+    private boolean isMatrixFilled = false;
     /**
      * Creates new form Program2
      */
@@ -78,15 +84,30 @@ public class Program2 extends javax.swing.JFrame {
         numberOfSellers.setBackground(new java.awt.Color(181, 202, 224));
         numberOfSellers.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         numberOfSellers.setForeground(new java.awt.Color(0, 0, 0));
+        numberOfSellers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numberOfSellersActionPerformed(evt);
+            }
+        });
 
         numberOfMonths.setBackground(new java.awt.Color(181, 202, 224));
         numberOfMonths.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         numberOfMonths.setForeground(new java.awt.Color(0, 0, 0));
+        numberOfMonths.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numberOfMonthsActionPerformed(evt);
+            }
+        });
 
         ConfirmValuesBttn.setBackground(new java.awt.Color(0, 153, 153));
         ConfirmValuesBttn.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         ConfirmValuesBttn.setForeground(new java.awt.Color(255, 255, 255));
         ConfirmValuesBttn.setText("Confirmar");
+        ConfirmValuesBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmValuesBttnActionPerformed(evt);
+            }
+        });
 
         OperationsMenuLabel.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         OperationsMenuLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,6 +122,11 @@ public class Program2 extends javax.swing.JFrame {
         SelectOptionBttn.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         SelectOptionBttn.setForeground(new java.awt.Color(255, 255, 255));
         SelectOptionBttn.setText("Seleccionar");
+        SelectOptionBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SelectOptionBttnActionPerformed(evt);
+            }
+        });
 
         ExitButton.setBackground(new java.awt.Color(0, 153, 153));
         ExitButton.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
@@ -116,6 +142,11 @@ public class Program2 extends javax.swing.JFrame {
         ResetValuesBttn.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         ResetValuesBttn.setForeground(new java.awt.Color(255, 255, 255));
         ResetValuesBttn.setText("Reiniciar Valores");
+        ResetValuesBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetValuesBttnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelContainerLayout = new javax.swing.GroupLayout(PanelContainer);
         PanelContainer.setLayout(PanelContainerLayout);
@@ -202,6 +233,99 @@ public class Program2 extends javax.swing.JFrame {
         mainMenu.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void ConfirmValuesBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmValuesBttnActionPerformed
+         // Verificar si la matriz ya ha sido llenada
+            if (isMatrixFilled) {
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Los valores de la matriz ya han sido ingresados.",
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE
+                );
+                return;
+            }
+        
+        String strSellers, strMonths;
+        strSellers = numberOfSellers.getText();
+        strMonths = numberOfMonths.getText();
+        
+        if(ValidatesProgram2.validateEmptyValues(strSellers, strMonths)){
+            numberOfSellers.setText("");
+            numberOfMonths.setText("");
+            numberOfSellers.requestFocus();
+            return;
+        }
+        
+        int NumberOfSellers, NumberOfMonths;
+        try{
+            NumberOfSellers = Integer.parseInt(strSellers);
+            NumberOfMonths = Integer.parseInt(strMonths);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, 
+                    "Los valores deben ser números enteros ", "Error", 0);
+            numberOfSellers.setText("");
+            numberOfMonths.setText("");
+            numberOfSellers.requestFocus();
+            return;
+        }
+        
+        if(ValidatesProgram2.validatePositive(NumberOfSellers, NumberOfMonths)){
+            numberOfSellers.setText("");
+            numberOfMonths.setText("");
+            numberOfSellers.requestFocus();
+            return;
+        }
+        
+         boolean matrixFilledSuccessfully = calculationsprogram2.fillMatrix(NumberOfSellers, NumberOfMonths); //este es llamado del metodo para llenar la matriz
+        
+        // Si la matriz fue llenada correctamente, actualizar el indicador y mostrar mensaje
+            if (matrixFilledSuccessfully) {
+                isMatrixFilled = true;
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Los valores han sido ingresados exitosamente.",
+                    "Confirmación",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+        
+    }//GEN-LAST:event_ConfirmValuesBttnActionPerformed
+
+    private void numberOfSellersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOfSellersActionPerformed
+         numberOfMonths.requestFocus();
+    }//GEN-LAST:event_numberOfSellersActionPerformed
+
+    private void SelectOptionBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelectOptionBttnActionPerformed
+         // Obtener la opción seleccionada del JComboBox
+        String selectedOption = OperationsMenu.getSelectedItem().toString(); 
+            // Llamar al método correspondiente en CalculationsProgram2 según la opción seleccionada
+            if (selectedOption.equals("Mostrar la matriz en formato tabular")) {
+                calculationsprogram2.showSalesMatrix();
+            } else if (selectedOption.equals("Imprimir el vector VtasPorVendedor")) {
+                calculationsprogram2.showSalesPerSeller();
+            } else if (selectedOption.equals("Imprimir el vector PromPorVendedor")) {
+                calculationsprogram2.showAvgPerSeller();
+            } else if (selectedOption.equals("Imprimir el vector VtasPorMes")) {
+                calculationsprogram2.showSalesPerMonth();
+            } else if (selectedOption.equals("Imprimir el vector PromPorMes")) {
+                calculationsprogram2.showAvgPerMonth();
+            } else if (selectedOption.equals("Totalizar las ventas del negocio")) {
+                calculationsprogram2.totalizeSales();
+            }
+        
+    }//GEN-LAST:event_SelectOptionBttnActionPerformed
+
+    private void numberOfMonthsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberOfMonthsActionPerformed
+        ConfirmValuesBttnActionPerformed(evt);
+    }//GEN-LAST:event_numberOfMonthsActionPerformed
+
+    private void ResetValuesBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetValuesBttnActionPerformed
+        numberOfSellers.setText("");
+        numberOfMonths.setText("");
+        numberOfSellers.requestFocus();
+        isMatrixFilled = false;
+    }//GEN-LAST:event_ResetValuesBttnActionPerformed
 
     /**
      * @param args the command line arguments
