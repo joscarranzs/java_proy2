@@ -128,7 +128,10 @@ public class MainMenu extends javax.swing.JFrame {
             // Verifica si la opción seleccionada es "Program 2"
             } else if(select.equals("Programa 2")){
                 // Abre la ventana del Programa 2
-
+                Program2 program2 = new Program2();
+                program2.setVisible(true);
+                program2.setLocationRelativeTo(null);
+                this.dispose();
             // Verifica si la opción seleccionada es "Program 3"
             } else if(select.equals("Programa 3")){
                // Abre la ventana del Programa 3
