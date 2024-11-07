@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class CalculationsProgram1 {
   private float[] mainVector; 
   //Método para llenar de valores el vector
-  public void fillVector(int numbValue){
+  public boolean fillVector(int numbValue){
     float[] vector = new float[numbValue];
     // Llenar el vector con valores ingresados por el usuario usando JOptionPane
     for (int i = 0; i < numbValue; i++) {
@@ -27,6 +27,15 @@ public class CalculationsProgram1 {
         "Ingreso de valores",
         JOptionPane.PLAIN_MESSAGE
       );
+      if(input == null){
+            JOptionPane.showMessageDialog(
+                            null,
+                            "Entrada de datos cancelada.",
+                            "Cancelado",
+                            JOptionPane.WARNING_MESSAGE
+                        );
+                        return false;
+      }
       try {
         vector[i] = Float.parseFloat(input);
       } catch (NumberFormatException e) {
@@ -41,6 +50,7 @@ public class CalculationsProgram1 {
     }
 
     this.mainVector = vector;
+    return true;
   }
 
   public void operationsOptions(JCheckBox sumPosVecElements, 

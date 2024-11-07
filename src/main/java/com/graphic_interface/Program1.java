@@ -336,16 +336,20 @@ public class Program1 extends javax.swing.JFrame {
          
          
          //Se llama al método para llenar los valores del vector
-          calculationsProgram.fillVector(numbValues);
-         isVectorFilled = true; //  Indica que el vector ha sido llenado
-         //Mensaje de confirmación del vector cargado
-         JOptionPane.showMessageDialog(
-            null,
-            "Todos los valores han sido ingresados exitosamente.",
-            "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE
+           boolean vectorFilledSuccessfully =calculationsProgram.fillVector(numbValues);
+          
+          if(vectorFilledSuccessfully){//si toda la entrada de datos se llena correctamente, entonces se indica que el vector ha sido llenado
+                isVectorFilled = true; //  Indica que el vector ha sido llenado
+                //Mensaje de confirmación del vector cargado
+                JOptionPane.showMessageDialog(
+                null,
+                "Todos los valores han sido ingresados exitosamente.",
+                "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE
     );
          
+          }    
+
     }//GEN-LAST:event_confirmValuesActionPerformed
 
     private void NumberOfValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NumberOfValuesActionPerformed
